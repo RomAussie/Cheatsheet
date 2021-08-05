@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web forms Cheatsheet</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Web forms</h1>
+
+        <div class="main_text">
+            <p>Web forms are one of the main points of interaction between a user and a web site or application. Forms
+                allow users to enter data, which is generally sent to a web server for processing and storage, or used on the
+                client-side to immediately update the interface in some way.<br>A web form's HTML is made up of one or
+                more form controls (sometimes called widgets), plus some additional
+                elements to help structure the overall form — they are often referred to as HTML forms.<br>The controls
+                are mostly created using the &lt;input&gt; element, although there are some other elements to
+                learn about too.<br>Form controls can also be programmed to enforce specific formats or values to be
+                entered (form validation), and paired with text labels that describe their purpose to both sighted and blind
+                users.
+            </p>
+        </div>
+
+        <img src="./Images/Header joke.jpg" alt="Funny image">
+
+    </header>
+
+    <main>
+
+        <!--.............. The <form> element............. -->
+
+        <section class="form_element">
+
+            <h2>The &lt;form&gt; element</h2>
+
+            <div class="main_text">
+                <p>This HTML element represents a document section ("Form") containing interactive controls for
+                    submitting information. <br> All forms start with a &lt;form&gt; element, like this:
+                </p>
+            </div>
+
+            <img src="./Images/form usage base example.jpg" alt="HTML example of usage &lt;form&gt; element">
+
+            <div class="main_text">
+                <p>This element formally defines a form. It's a container element like a
+                    &lt;section&gt; or &lt;footer&gt; element, but specifically for containing forms <br> It also
+                    supports some specific attributes to configure the way the form behaves. All of its attributes
+                    are optional, but it's standard practice to always set at least:
+                </p>
+            </div>
+
+            <div class="table">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="first_column">action</td>
+                            <td>Defines the location (URL) where the form's collected data should be sent when it is
+                                submitted.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first_column">method</td>
+                            <td>Defines which HTTP method to send the data with (usually "GET" or "POST").</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data"
+                                    target="_blank">More information about &lt;form&gt; attributes is here.
+                                </a>
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+
+        </section>
+
+        <!--........Te <label> element..................-->
+
+        <section class="label_element">
+            <div class="label_element">
+                <article>
+                    <h2>The &lt;label&gt; element</h2>
+                    <div class="main_text">
+                        <p>This element represents a caption for an item in a user interface. <br>
+                            In web forms, it's usually associated with &lt;input&gt; element what offers some major
+                            advantages:
+                        </p>
+                        <ul>
+                            <li>The label text is not only visually associated with its corresponding text input; it is
+                                programmatically associated with it too. This means that, for example, a screen reader
+                                will read out the label when the user is focused on the form input, making it easier for an
+                                assistive technology user to understand what data should be entered.
+                            </li>
+                            <li>You can click the associated label to focus/activate the input, as well as the input
+                                itself. This increased hit area provides an advantage to anyone trying to activate the input,
+                                including those using a touch-screen device.
+                            </li>
+                        </ul>
+                        <p>To associate the &lt;label&gt; with an &lt;input&gt; element, you need to give the
+                            &lt;input&gt;
+                            an
+                            id attribute. The &lt;label&gt; then needs a for attribute whose value is the same as the
+                            input's
+                            id.
+                        </p>
+                    </div>
+                    <img class="render_img" src="./Images/label usage long way output.jpg"
+                        alt="HTML code render result">
+                    <img src="./Images/label usage long way.jpg" alt="HTML example of usage &lt;label&gt; element">
+                    <p class="main_text">Alternatively, we can nest the &lt;input&gt; directly inside the &lt;label&gt;,
+                        in
+                        which case the for
+                        and id
+                        attributes are not needed because the association is implicit:
+                    </p>
+                    <img class="short_way_img" src="./Images/label usage short way.jpg"
+                        alt="HTML example of usage nested &lt;input&gt; elemen">
+                </article>
+
+                <aside class="main_text">
+                    <p>Other usage notes:</p>
+                    <ul>
+                        <li>The form control that the label is labeling is called the labeled control of the label
+                            element. One input can be associated with multiple labels.
+                        </li>
+                        <li>When a &lt;label&gt; is clicked or tapped and it is associated with a form control, the
+                            resulting
+                            click event is also raised for the associated control.
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!--........Te <input> element..................-->
+
+        <section class="input_element">
+
+            <article class="input_element">
+                <h2>The &lt;input&gt; element</h2>
+                <div class="input_element">
+                    <p class="main_text">This element is used to create interactive controls for web-based forms in
+                        order to accept data
+                        from the user. <br>
+                        A wide variety of types of input data and control widgets are available due to the sheer number
+                        of combinations of input types and attributes.<br>
+                        Here is a basic scheme input element usage:
+                    </p>
+                </div>
+                <img src="./Images/input usage scheme.jpg" alt="Scheme of &lt;input&gt; element attributes">
+            </article>
+
+            <article>
+                <div class="type_attribute">
+                    <h3>Input type attribute</h3>
+                    <p class="main_text">How an &lt;input&gt; works varies considerably depending on the value of its
+                        type attribute<br>
+                        Some available types are follows:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button"
+                                        target="_blank">button</a></td>
+                                <td>A push button with no default behavior displaying the value of the value attribute,
+                                    empty by default.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox"
+                                        target="_blank">checkbox</a></td>
+                                <td>A check box allowing single values to be selected/deselected.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date"
+                                        target="_blank">date</a></td>
+                                <td>A control for entering a date (year, month, and day, with no time). Opens a date
+                                    picker or numeric wheels for year, month, day when active in supporting browsers.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email"
+                                        target="_blank">email</a></td>
+                                <td>A field for editing an email address. Looks like a text input, but has validation
+                                    parameters and relevant keyboard in supporting browsers and devices with dynamic
+                                    keyboards.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number"
+                                        target="_blank">number</a></td>
+                                <td>A control for entering a number. Displays a spinner and adds default validation when
+                                    supported. Displays a numeric keypad in some devices with dynamic keypads.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password"
+                                        target="_blank">password</a></td>
+                                <td>A single-line text field whose value is obscured. Will alert user if site is not
+                                    secure.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio"
+                                        target="_blank">radio</a></td>
+                                <td>A radio button, allowing a single value to be selected out of multiple choices with
+                                    the same name value.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range"
+                                        target="_blank">range</a></td>
+                                <td>A control for entering a number whose exact value is not important. Displays as a
+                                    range widget defaulting to the middle value. Used in conjunction min and max to
+                                    define the range of acceptable values.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel"
+                                        target="_blank">tel</a></td>
+                                <td>A control for entering a telephone number. Displays a telephone keypad in some
+                                    devices with dynamic keypads.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text"
+                                        target="_blank">text</a></td>
+                                <td>The default value. A single-line text field. Line-breaks are automatically removed
+                                    from the input value.</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <a
+                                        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname">
+                                        All available types are here:
+                                    </a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
+
+            <article class="other_attributes">
+                <div class="other_attributes">
+                    <h3>Other attributes</h3>
+                    <div class="main_text">
+                        <p>There is a wide range of &lt;input&gt attributes available. It allows creating any type of
+                            web
+                            form. <br>
+                            Here are some of that attributes:
+                        </p>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Attribute</td>
+                                <td>Type</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete"
+                                        target="_blank">autocomplete</a></td>
+                                <td>all</td>
+                                <td>Hint for form autofill feature</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautofocus"
+                                        target="_blank">autofocus</a></td>
+                                <td>all</td>
+                                <td>Automatically focus the form control when the page is loaded</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefchecked"
+                                        target="_blank">checked</a></td>
+                                <td>radio, checkbox</td>
+                                <td>Whether the command or control is checked</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefdisabled"
+                                        target="_blank">disabled</a></td>
+                                <td>all</td>
+                                <td>Whether the form control is disabled</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist"
+                                        target="_blank">list</a></td>
+                                <td>almost all</td>
+                                <td>Value of the id attribute of the <a
+                                        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist"
+                                        target="_blank">datalist</a> autocomplete options</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefmax"
+                                        target="_blank">max (min)</a></td>
+                                <td>numeric types</td>
+                                <td>Maximum (minimum) value</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefmaxlength"
+                                        target="_blank">maxlength (minlength)</a></td>
+                                <td>password, search, tel, text, url</td>
+                                <td>Maximum (minimum) length (number of characters) of value</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefpattern"
+                                        target="_blank">pattern</a></td>
+                                <td>password, text, tel</td>
+                                <td>Pattern the value must match to be valid</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefplaceholder"
+                                        target="_blank">placeholder</a></td>
+                                <td>password, search, tel, text, url</td>
+                                <td>Text that appears in the form control when it has no value set</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required"
+                                        target="_blank">required</a></td>
+                                <td>almost all</td>
+                                <td>Boolean. A value is required or must be check for the form to be submittable</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefstep"
+                                        target="_blank">step</a></td>
+                                <td>numeric types</td>
+                                <td>Incremental values that are valid</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefvalue"
+                                        target="_blank">value</a></td>
+                                <td>all</td>
+                                <td>The initial value of the control</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes"
+                                        target="_blank">All available attributes are here:</a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <div>
+            <p>
+                This page was created as a training project for <a href="https://www.codecademy.com/"
+                    target="_blank">Codecademy</a> "Front-end Engineering' course.<br>August 2021
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
